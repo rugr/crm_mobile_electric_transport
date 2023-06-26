@@ -14,4 +14,9 @@ public class IndexController {
     public String getIndexPage(Model model) {
         return "index";
     }
+
+    @GetMapping(value = "/login")
+    public String getLogin(Model model) {
+        return "login";
+    }
 }
