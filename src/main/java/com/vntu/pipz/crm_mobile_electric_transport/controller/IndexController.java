@@ -15,8 +15,8 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping(value = "/login")
-    public String getLogin(Model model) {
-        return "login";
+    @GetMapping(value = "/home")
+    public String getHome(Model model) {
+        return "home";
     }
 }
