@@ -17,7 +17,8 @@ public class EnergyCapacityBattery {
 
     public BigDecimal getEnergyCapacityBattery() {
         if (distance != null && speedMovementKilometersPerHour != null && power != null && voltage != null) {
-            return distance.divide(speedMovementKilometersPerHour).multiply(power).divide(voltage);
+            return distance.divide(speedMovementKilometersPerHour, 1, BigDecimal.ROUND_HALF_DOWN)
+                    .multiply(power).divide(voltage, 1, BigDecimal.ROUND_HALF_DOWN);
         }
         return null;
     }
