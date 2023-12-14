@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head th:replace="fragments/head :: head"></head>
 <body>
     <div th:replace="fragments/navbar :: navbar"></div>
@@ -15,7 +15,7 @@
             <h4><a href="/logout">Вийти</a></h4>
         </sec:authorize>
         <h4><a href="/home">Home (тільки користувач)</a></h4>
-        <h4><a href="/admin">Користувачі (тільки адмін)</a></h4>
+        <h4 sec:authorize="hasRole('ROLE_ADMIN')"><a href="/admin">Користувачі (тільки адмін)</a></h4>
         </p>
     </div>
     <div th:replace="fragments/jscript :: jscript"></div>
